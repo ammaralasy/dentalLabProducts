@@ -1,0 +1,852 @@
+/*  ------------------------------------------------------------------------------------------------
+    Copyright (c) 2004-2011, ePages GmbH
+    All Rights Reserved.
+
+    IEStyles.css
+
+    Summary: Stylesheet for IE hacks and fixes SF
+    ------------------------------------------------------------------------------------------------ */
+
+html,
+body {
+  position:static;
+}
+
+.SetHasLayout,
+.Opacity10, .Opacity20, .Opacity30, .Opacity40, .Opacity50, .Opacity60, .Opacity70, .Opacity80, .Opacity90 {
+  #zoom: 1; /* force layout dimensions (width, height) in IE */
+}
+.BlurText {
+  #top:0;
+  filter:progid:DXImageTransform.Microsoft.blur(pixelradius=3);
+  zoom:1;
+}
+body ~ body {
+  #visibility:visible;
+}
+
+img {
+   -ms-interpolation-mode : bicubic;
+}
+
+table.TinyMCETable td {
+  #border-width:expression(this.parentNode.parentNode.currentStyle.borderWidth) !important;
+}
+
+button, input[type="submit"], input[type="button"] {
+  #overflow:visible;
+}
+
+td:hover {
+  #min-width:0;
+}
+
+#REM /* - == Icon Formatting ==  - */ #ENDREM
+#REM /* - Icon Link Classes  - */ #ENDREM
+#REM /* - '--> Basket Link / Button - */ #ENDREM
+
+.LinkBasket {
+  _zoom:1;
+  _background:none;
+}
+
+input.LinkBasket {
+  _padding-left:21px !important;
+  _height:16px;
+  _overflow: visible;
+  _background:none;
+}
+
+.LinkBasketNormal {
+  _display:inline-block;
+}
+
+#REM /* - '--> Various Icon Links - */ #ENDREM
+
+.ContentArea a.LinkPrintView,
+.ContentArea a.LinkDownload {
+  _line-height:normal !important;
+  _zoom:1;
+  _background:none;
+  _padding-right: 0px;
+}
+
+.ContentArea a.LinkProductRecommendation,
+.ContentArea a.LinkProductInquiry,
+.ContentArea a.LinkAddShoppingList,
+.ContentArea input.LinkAddShoppingList {
+  _line-height:normal !important;
+  _zoom:1;
+  _background:none;
+  _padding-left: 0px;
+}
+
+.ContentArea a.LinkProductComparison,
+.ContentArea input.LinkCompareProduct,
+.ContentArea a.LinkCompareProduct {
+  _zoom:1;
+  _background:none;
+  _padding-left: 0px;
+}
+
+html body .ContentArea input.LinkAddShoppingList {
+  _padding-left: 0px;
+}
+
+.LinkHotIcon,
+a.LinkSpecialPrices {
+  _zoom:1;
+  _background:none;
+  _padding-left: 0px;
+}
+
+.LinkHotIcon {
+  _background:none;
+  _padding-left: 0px;
+}
+
+#REM /* - '--> Link Appointment - */ #ENDREM
+
+.ContentArea a.LinkAppointment {
+  _line-height:normal !important;
+  _zoom:1;
+}
+
+#REM /* - '--> right icon alignment  - */ #ENDREM
+
+html body .ContentArea .ContentAreaWrapper .ProductDetails.ImageLeft .LinkIcon,
+html body .ContentArea .ContentAreaWrapper .ProductDetails.ImageBroad .LinkIcon {
+  _padding-right: 0px;
+}
+
+html body .ContentArea .ContentAreaWrapper .ImageRight a.LinkPrintView {
+  _padding-left: 0px;
+}
+
+#REM/* - === Messages === - */
+/* - '--> ErrorMessage - */ #ENDREM
+
+.ErrorMessage {
+  _height: 24px;
+}
+
+#REM/* - '--> DialogMessage - */ #ENDREM
+
+.DialogMessage,
+.ErrorMessage {
+  _float:left;
+}
+
+.Dialog div.IllustratedLink a i {
+  #float:none;
+  #margin:0;
+}
+
+#REM/* - '--> General NavBar Formatting - */#ENDREM
+
+
+div.PropertyContainer table.CellLimiter {
+  #float:left;
+  #table-layout: auto !important;
+}
+
+.NavBarLeft .PropertyContainer,
+.NavBarRight .PropertyContainer {
+  #float:left;
+}
+
+
+
+#REM/* - === General Layout === - *//* (general sections on a page) */#ENDREM
+
+td.ContentArea {
+  #width:99999999px !important;
+  #max-width:none !important;
+}
+
+.ContentAreaWrapper {
+  #width:100%;
+}
+
+.MandatoryStar {
+  #margin-top:-2px;
+}
+
+.RestrictedWidth{  /* button minimizer */
+  _width: 5%;
+}
+
+#REM/* - Elements in the Header ------------------------------------------------------------------------------------ */#ENDREM
+
+.Header .NavigationElement,
+.Header .Active,
+.Header p.BasketLink,
+.Header .NavigationElement > a,
+.Header .NavigationElement > em > a,
+.Header .Active a,
+.NavBarTop .NavigationElement,
+.NavBarTop .Active,
+.NavBarTop p.BasketLink,
+.NavBarTop .NavigationElement > a,
+.NavBarTop .NavigationElement > em > a,
+.NavBarTop .Active a {
+  _width: 10px;
+}
+
+#REM/* - === IE7 Fixes === */#ENDREM
+
+.ie7 .Div .NavBarTop *,
+.ie7 .Div .NavBarBottom *,
+.ie7 .Div .Footer *,
+.ie7 .Div .NavBarRoof *,
+.ie7 .Div .Header * {
+  vertical-align:top;
+}
+
+#REM/* - LoginBox (Header) -------------------------------------------------------------------------------------------- */#ENDREM
+
+.Header div.Entry,
+.NavBarTop div.Entry,
+.NavBarLeft div.Entry,
+.NavBarRight div.Entry {
+  _height:24px;
+}
+
+.Header .LoginBox input.Action {
+  _display:inline-block;
+}
+
+#REM/* - LoginBox -------------------------------------------------------------------------------------------- */#ENDREM
+
+.NavBarTop .LoginBox input.Action,
+.NavBarLeft .LoginBox input.Action,
+.NavBarLeft .ContextBox input.Action,
+.NavBarRight .LoginBox input.Action,
+.NavBarRight .ContextBox input.Action {
+  _display:inline-block;
+}
+
+#REM/* - Elements in NavBarBottom ------------------------------------------------------------------------------------- */#ENDREM
+#REM/* - Elements in Footer ------------------------------------------------------------------------------------- */#ENDREM
+
+.NavBarBottom .NavigationElement,
+.NavBarBottom .Active,
+.NavBarBottom p.BasketLink,
+.NavBarBottom .NavigationElement a,
+.NavBarBottom .Active a,
+.Footer .NavigationElement,
+.Footer .Active,
+.Footer p.BasketLink,
+.Footer .NavigationElement a,
+.Footer .Active a {
+  _width: 10px;
+}
+
+#REM/* - LoginBox (Footer) -------------------------------------------------------------------------------------------- */#ENDREM
+
+.Footer div.Entry {
+  _height:24px
+}
+
+.Footer .LoginBox input.Action,
+.FoldingCategoryList .SubCategory {
+  _display:inline-block;
+}
+
+#REM/* - '--> Address ------------------------------------------------*/#ENDREM
+
+.Dialog div.SizeContainer,
+.AddressDialog div.SizeContainer {
+  *overflow:hidden;
+}
+
+.BasketAddressSelect .Address,
+.BasketAddressForm .Address,
+.EditAddress .Address,
+.Addresses .Address {
+  _height: 70px;
+}
+
+#REM/* - '--> Crosselling / ProductListImageBox (Feature:Products) -*/#ENDREM
+
+.ProductListImageBox div.InfoArea {
+  _height: auto;
+}
+
+#REM/* - '--> Pager ---------------------------------------------------------------------------------------------------- */#ENDREM
+
+.Pager {
+  _width:100%;
+}
+
+.PagerSizeContainer {
+  *clear:both;
+  *padding-bottom:5px;
+}
+
+.PagerSizeContainer li {
+  *margin:0 1px;
+}
+
+.PagerSizeContainer span {
+   *height:15px;
+}
+
+#REM /* - '--> Container for Links - */ #ENDREM
+
+/* workaround IE's float box-sizing error */
+
+.Links.AlignLeft .FloatRight {
+  #float:left !important;
+}
+
+.Links.AlignLeft div.FloatRight.TopSmallMargin .LinkBasket {
+  #position:absolute;
+  #left:60px !important;
+}
+
+#REM/* - '--> Basket Comment ------------------------------------------------------------------------------------------- */#ENDREM
+
+textarea.BasketComment {
+  #width:230px;
+}
+
+#REM/* - '--> Category List Items - */#ENDREM
+
+.ListItemCategory {
+  _height: 50px;
+}
+
+.ListItemCategory .ImageArea {
+  _width: 50px;
+  _height: 50px;
+}
+
+#REM /* - == ProductList == - */ #ENDREM
+
+.ListItemProduct {
+  _height: 100px;
+}
+
+.ListItemProduct .ImageArea {
+  _width: 100px;
+  _height: 100px;
+}
+
+.ListItemProduct .ListItemProductInfoContainer {
+  #display:inline-block;
+}
+
+.ListItemProduct h3.Headline a{
+  _line-height: 140% !important;
+}
+
+.ProductListImageBox .NewProduct,
+.ListItemProduct .NewProduct {
+  _width: 28px !important;
+  _height: 28px !important;
+}
+
+.ListItemProductTopFloatArea h3.Headline {
+  #width:auto;
+  #float:left;
+}
+
+#REM/* - == Product Details (Feature: Products) == - */#ENDREM
+#REM/* - '--> image left, right, broad (image centering) - */#ENDREM
+
+.ImageLeft .ImageArea {
+  _float: left;
+}
+
+#REM/* - image broad  */#ENDREM
+
+.ImageBroad div.ImageArea {
+  _padding: 2px 0 3px 0;
+}
+
+#REM/* - image right */#ENDREM
+
+.ImageRight .ImageArea {
+  _width: 200px;
+}
+
+#REM/* - '--> general layout - */#ENDREM
+
+.NavBarBottom .LoginBox input.Action,
+a.ExtenderOpened,
+a.ExtenderClosed,
+a.Edit,
+a.Delete,
+.SLToBasket,
+a.Action, .Link.Action,
+.VariationsTable input.Action{
+  _display:inline-block;
+}
+
+.ProductDetails .NewProduct,
+.ComparisonTable .NewProduct {
+  _width: 28px !important;
+  _height: 28px !important;
+  _display:inline-block;
+}
+
+#REM/* - == CustomButton / Links == - */#ENDREM
+
+.CustomButton {
+  *padding-top:0;
+  #position:static;
+}
+
+.CustomButton * i.Icon,
+.CustomButton * i.Icon[class*="Small"] {
+  #top:0;
+}
+
+ {
+  #top:0;
+}
+
+#REM /* - '--> Basket Button - */ #ENDREM
+
+.CustomButton.AddToBasketButton {
+  _height:22px;
+  _line-height:22px;
+  *padding-top:2px;
+}
+
+#REM/* - == Product Rating (Feature:ProductRating) == - */#ENDREM
+
+.ProductRatingSwitch input {
+  #width:100%;
+  #left:0 !important;
+}
+
+.ProductRatingDefaultText {
+  _margin-left:44px;
+}
+
+.ProductRatingComment {
+  #width:100%;
+}
+
+.WriteProductRating,
+.LinkProductRating {
+  _display:inline-block;
+  _background:none;
+  _padding-left: 0px;
+}
+
+#NewRatingTable .SizeContainer {
+  _width:481px;
+}
+
+.BusinessHoursRow {
+  #height:21px;
+}
+
+.BusinessHoursStatusClosed {
+  #width:100%;
+}
+
+.BusinessHoursGrid {
+  #margin-left:-5px;
+}
+
+#REM/* - === PriceLists === - */#ENDREM
+
+html .MessageMediumBasketDiscount,
+.Message.Medium.BasketDiscount {
+  _zoom:1;
+  _padding-top: 0px;
+  _margin-top: 8px;
+}
+
+html .FreeShipping,
+.Message.Size80.BasketDiscount {
+  _zoom:1;
+}
+
+#REM/* - == Download Preview == - */#ENDREM
+
+.DownloadPreview  h2 {
+  *float:left;
+  *padding-top:10px;
+}
+
+.DownloadPreview  {
+  *display:inline;
+}
+
+.DownloadPreview li a {
+    *clear:both;
+}
+
+#REM/* Styles for switching to div-based layout templates */#ENDREM
+#ContentCellFix, .Div .ContentCell.FullSize:before {
+  *width:auto;
+  *z-index:50;
+}
+
+.Div .Header .PropertyContainer .SizeContainer > *,
+.Div .Footer .PropertyContainer .SizeContainer > *,
+.Div .HorizontalNavBar .PropertyContainer .SizeContainer > *,
+.Div .NavBarTop .SizeContainer > *,
+.Div .NavBarBottom .SizeContainer > *,
+.Div .NavBarTop .SizeContainer .NavigationElement,
+.Div .NavBarBottom .SizeContainer .NavigationElement,
+.Div .HorizontalNavBar .SizeContainer .HorizontalDisplay > *,
+.Div .Header .SizeContainer .NavigationElement
+ {
+  *display:inline;
+}
+
+#REM/* - === IE7 Fixes === */#ENDREM
+
+.Div .NavBarTop > *,
+.Div .NavBarBottom *,
+.Div .Footer *,
+.Div .Header > * {
+  *zoom:1;
+  *position:relative;
+}
+
+/* IE7 fixes */
+
+/* ** Product Detail Page ** */
+
+html body .ep-uiCustomizer-inputElements label,
+html body .ep-uiCustomizer-inputElements label span,
+html body .ep-uiCustomizer-inputElements label input,
+html body .ep-uiCustomizer-inputElements label textarea {
+  *position:static;
+}
+
+html body .ep-uiCustomizer {
+  *width:780px !important;
+}
+  .ui-dialog .ui-dialog-titlebar {
+    *position:relative;
+  }
+    .ui-dialog .ui-dialog-titlebar-close {
+      *z-index:500;
+      *position:absolute;
+      *right:10px;
+      *top:10px;
+      *color:red;
+    }
+  .ep-uiCustomizer-preview {
+    *width:400px;
+    *float:left;
+  }
+  .ep-uiCustomizer-inputs {
+    width:315px;
+  }
+  .ep-uiCustomizer-inputs {
+    *width:320px;
+    *float:right;
+  }
+
+    .customizerBasketButtonBar .ep-uiCustomizer-numberSpinner,
+    .customizerBasketButtonBar .ep-uiInput-wrapSubmit {
+      *display:inline !important;
+      *float:right;
+    }
+  .ep-uiCustomizer-fontColor li {
+    *float:left;
+  }
+  .ep-uiCustomizer-toolbar {
+    *padding-left:50px;
+  }
+    .ep-uiCustomizer-toolbar li {
+      *float:left;
+    }
+    .ep-uiCustomizer-textInput.FullWidth {
+      *width:320px;
+    }
+    label.de_epages-presentationUiUploader-button {
+      *position:relative;
+    }
+      label.de_epages-presentationUiUploader-button input.ep-uiInput-hidden {
+        *filter: alpha(opacity=100);
+        *margin-left:-60px !important;
+        *width:160px !important;
+      }
+      input.ep-uiCustomizer-fileInput {
+        *right: 0 !important;
+        *z-index: 9999999 !important;
+      }
+        span.ep-uiInput-button {
+          *display:none;
+        }
+
+.msie .ep-uiCustomizer-fileInput + .ep-uiInput-custom {
+  position: relative;
+  z-index: 10;
+}
+
+.msie .ep-uiCustomizer-fileInput {
+  height:auto;
+  width:auto;
+  position: relative;
+  z-index: 20;
+  display: block;
+  margin-left: -50px;
+  margin-bottom: -30px;
+  padding:10px 6px;
+  font-size:16px;
+}
+
+/* Old Layout */
+
+.ProductDetails table tr.TableLayoutRow > td:first-child #ProductSlideshow {
+    *width: 200px !important;
+  }
+
+
+/* ** END Product Detail Page ** */
+
+.SearchMask button,
+.SearchForm button {
+  *width:28px;
+}
+
+.ForumPostInputContainer .ep-uiInput-wrap,
+.ForumPostMessageContainer .ep-uiInput-wrap {
+  *width:95%;
+}
+
+.ep-uiDatepicker-calendar .ep-uiDatepicker-titleBar button.ep-uiInput-button {
+  *padding:0px 10px 2px;
+}
+
+.NavBarBottom .CoinLabel,
+.Footer .CoinLabel,
+.Header .CoinLabel,
+.NavBarTop .CoinLabel {
+  #top: 7px;
+  #left: 1px;
+}
+
+.NavBarRight .CoinLabel,
+.NavBarLeft .CoinLabel {
+  #top:7px;
+}
+
+/* Text-Layout Template Fixes */
+.CategoryBaseTable .ImgComplete { *margin:0 auto; *width:99%; }
+.CategoryBaseTable .ImgLeft > img,
+.CategoryBaseTable .ImgRight > img { *display:block; *margin:0 auto; }
+
+/* Drop-Down Menu */
+.NavBarLeft ul.DropDownList a,
+.NavBarRight ul.DropDownList a {
+  *width:99%;
+}
+ul.DropDownList ul,
+ul.DropDownList ul li ul,
+ul.DropDownList ul ul li ul,
+ul.DropDownList ul ul ul li ul {
+  *margin:0!important;
+}
+ul.DropDownList li {
+  *z-index:1;
+}
+ul.DropDownList li:hover {
+  *z-index:10;
+}
+
+/* Mini-Basket in Header/Footer */
+.Header table.MiniBasket,
+.NavBarTop table.MiniBasket,
+.NavBarBottom table.MiniBasket,
+.Footer table.MiniBasket {
+  *width:auto!important;
+}
+
+img.ThumbnailsInBasket {
+  _width: 33px;
+}
+
+.Div .NavBarTop .SizeContainer,
+.Div .NavBarBottom .SizeContainer {
+  width:100%;
+}
+
+.Div .NavBarTop .custom-container,
+.Div .NavBarBottom .custom-container {
+  width:auto;
+}
+
+#CheckOut button .ep-sprite-xs,
+#CheckOutTop button .ep-sprite-xs,
+#CheckOut .ep-uiInput-button .ep-sprite-xs,
+#CheckOutTop .ep-uiInput-button .ep-sprite-xs, {
+  *margin-top:3px;
+  *margin-right:10px;
+}
+
+/* Productimage in Detailview */
+#ProductSlideshow{
+  width: 200px;
+}
+
+/* Javascript dialog window css  */
+.epDialog {
+  /* text-align:right; */
+}
+
+.epDialog .epDialogTitleBar {
+  background-color:#ffffff;
+  border:0px;
+  outline:0px;
+}
+.ui-dialog .ui-dialog-titlebar-close span{
+  display:inline-block !important;
+  color:#ffffff;
+  padding:5px 0 0 0;
+  cursor:hand;
+}
+
+/* uiSlideshow (hold cursor on the right side) */
+.ep-uiSpinner .ep-uiInput-base.ep-uiInput-field.ep-uiInput-text{
+  direction: rtl;
+}
+/* input fixes ie7/8 */
+input[type="checkbox"] + .ep-uiInput-custom,
+.ep-uiInput-checkbox   + .ep-uiInput-custom,
+input[type="radio"] + .ep-uiInput-custom,
+.ep-uiInput-radio   + .ep-uiInput-custom {
+  display:none;
+}
+input[type="radio"],
+input[type="checkbox"],
+.ep-uiInput-radio,
+.ep-uiInput-checkbox {
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+  filter:none;
+  opacity:1;
+  margin-right:0;
+  background-color: transparent;
+}
+.ProductRatingSwitch input[type="radio"],
+.ProductRatingSwitch input[type="checkbox"] {
+  filter: alpha(opacity=1);
+  opacity: 0.001;
+}
+/* Multi-Checkout max-width fixes */
+.ie7 #MultiCheckout div.InputField { width: expression( this.width > 310 ? "310px" : "auto" ); }
+.ie7 #MultiCheckout .CheckoutSelect > img { width: expression( this.width > 623 ? "99%" : "auto" ); }
+.ie7 #MultiCheckout .IntroText * { width: expression( this.width > 920 ? "99%" : "auto" );  }
+.ie7 #ViewMultiCheckoutConfirmation .productBasketImage { width: expression( this.width > 100 ? "64px" : "auto" ); }
+#ViewMultiCheckoutConfirmation .Confirm-Order { *clear:none; }
+.ep-busy { *background-image:url('../../ep/images/base_busy.gif');  _background-image:url('../../ep/images/base_busy.gif'); }
+
+/*Product New Detail Page*/
+.AdditionalLinks.New > li:first-child + li + li,
+.AdditionalLinks.New > li:first-child + li + li + li + li,
+.AdditionalLinks.New > li:first-child + li + li + li + li + li + li,
+.AdditionalLinks.New > li:first-child + li + li + li + li + li + li + li + li {
+  clear:left;
+}
+
+/* Faceted Search */
+.RemoteSearchFacetPrice li {
+  position: relative;
+  left: 5px;
+}
+
+.RemoteSearchFacetRating input,
+.RemoteSearchFacetCategory input {
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  filter:alpha(opacity=0);
+  opacity:0;
+}
+
+.RemoteSearchFacetRating label i {
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter:alpha(opacity=40);
+}
+
+.RemoteSearchFacetRating label input:checked + i,
+.RemoteSearchFacetRating label input:checked + i + i,
+.RemoteSearchFacetRating label input:checked + i + i + i,
+.RemoteSearchFacetRating label input:checked + i + i + i + i,
+.RemoteSearchFacetRating label input:checked + i + i + i + i + i {
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter:alpha(opacity=100);
+}
+
+ul.UncheckedRatingFacet li i {
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter:alpha(opacity=100);
+}
+
+.RatingFacetDisabled {
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  filter:alpha(opacity=50);
+}
+
+  a.RemoteSearchFacetsReset .DeleteIconSmall {
+    -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  filter:alpha(opacity=70);
+}
+
+.RemoteSearchFacet input.ep-uiInput-checkbox {
+  margin-left: -20px;
+}
+
+.RemoteSearchFacetRating span.RemoteSearchFacetFilterName,
+.RemoteSearchFacetRating span.RemoteSearchFacetRating {
+  margin-left:0px;
+}
+
+span.RemoteSearchFacetFilterName {
+  *margin-left:0px;
+}
+
+.UncheckedRatingFacet li {
+  position: relative;
+  left: -16px;
+}
+
+.RemoteSearchFacetSelect input,
+.RemoteSearchFacetBoolean input {
+  opacity:100;
+}
+
+.RemoteSearchFacetBoolean input {
+  padding-left: 20px;
+}
+
+.RemoteSearchFacetBoolean .RemoteSearchFacetFilterName {
+  margin-left: 0px;
+}
+
+/* Sign in */
+#UserLoginForm ul.NoListStyleType,
+.ContentAreaWrapper ul.NoListStyleType.NoPadding {
+  *margin-left: 0;
+}
+
+/* Mega Menu */
+.ep-megamenu-container {
+  *margin:0;
+  position: absolute!important;
+}
+
+.ep-megamenu-second-level-element a:active,
+.ep-megamenu-third-level-element a:active{
+  background-color: transparent;
+}
+
+.ie7 .active-marker,
+.ie8 .active-marker  {
+  display: none!important;
+}
+
+/* improved search design */
+.SearchForm.horizontal-search > button {
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+  filter:none;
+}
